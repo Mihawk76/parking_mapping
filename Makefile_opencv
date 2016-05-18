@@ -1,0 +1,2 @@
+all:
+	g++ intruder_1.cpp -o intruder `pkg-config opencv --cflags --libs`
