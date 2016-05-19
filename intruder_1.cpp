@@ -168,8 +168,8 @@ int main(int argc, char* argv[])
     rect = Rect(0, 500, 1440, 525); // Rect(x, y, w, h)
 		// 655 = 1025−575
 		//rect = Rect(0, 500, 268, 400); 
-		cv::Mat a_ROI = a(rect);
-    cv::Mat b_ROI = frame(rect);
+		//cv::Mat a_ROI = a(rect);
+    //cv::Mat b_ROI = frame(rect);
     //cv::Mat b_ROI = b(rect);
     //data << " a.size().width " << a.size().width << endl;
     //if (a.empty() || b.empty())
