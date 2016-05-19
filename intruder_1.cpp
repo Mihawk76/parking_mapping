@@ -137,8 +137,8 @@ void intruderAlarm(cv::Mat& bg_frame, cv::Mat& cam_frame)
   //cv::line(drawing, cv::Point(0, 370), cv::Point(drawing.size().width, 525), cv::Scalar(0, 0, 255), 2, 8);
 	//cv::line(drawing, cv::Point(0, 870), cv::Point(drawing.size().width, 1025), cv::Scalar(0, 0, 255), 2, 8);
   //cv::rectangle(drawing, cv::Point(0, 370), cv::Point(drawing.size().width, 1025), cv::Scalar(0, 255, 255), 2, 8);
-	imshow( "Contours", drawing );
-	imshow( "Final Form", foregroundMask );
+	//imshow( "Contours", drawing );
+	//imshow( "Final Form", foregroundMask );
 }
 int main(int argc, char* argv[])
 {
