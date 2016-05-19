@@ -61,10 +61,9 @@ void intruderAlarm(cv::Mat& bg_frame, cv::Mat& cam_frame)
 	cv::absdiff(bg_frame, cam_frame, diffImage);
 	//cv::threshold(motion, motion, 80, 255, cv::THRESH_BINARY);
 	cv::Mat foregroundMask = cv::Mat::zeros(diffImage.rows, diffImage.cols, CV_8UC1);
-
-    float threshold = 30.0f;//30 awalnya
+    float threshold = 100.0f;//30 awalnya
     float dist;
-
+		cv::imshow("Diff Image", diffImage);
     for(int j=0; j<diffImage.rows; ++j)
         for(int i=0; i<diffImage.cols; ++i)
         {
