@@ -74,10 +74,10 @@ void intruderAlarm(cv::Mat& bg_frame, cv::Mat& cam_frame)
 
             if(dist>threshold)
             {
-                foregroundMask.at<unsigned char>(j,i) = 255;
+                foregroundMask.at<unsigned char>(j,i) =  255;
             }
         }
-	cv::imshow("Before", foregroundMask);
+	//cv::imshow("Before", foregroundMask);
 	//cv::imshow("Picture", bg_frame);
 	//cv::erode(foregroundMask,foregroundMask,cv::Mat());
 	//cv::dilate(foregroundMask,foregroundMask,cv::Mat());
@@ -146,6 +146,7 @@ int main(int argc, char* argv[])
     data.open("data.log",ios::out);
     // Load test images
     cv::Mat a = cv::imread(argv[1]);
+		imshow("Picture", a);
 		String name = argv[2];
 		VideoCapture capture(name);
 		if(!capture.isOpened())
@@ -180,7 +181,7 @@ int main(int argc, char* argv[])
 		intruderAlarm(a, frame);
     // Display result
 	
-	makeGrid(a);
+	//makeGrid(a);
 	cv::line(a, cv::Point(0, 370), cv::Point(a.size().width, 525), cv::Scalar(0, 0, 255), 2, 8);
 	cv::line(a, cv::Point(0, 870), cv::Point(a.size().width, 1025), cv::Scalar(0, 0, 255), 2, 8);
 	cv::line(a, boundary[0], boundary[3], cv::Scalar(0, 255, 255), 2, 8);
