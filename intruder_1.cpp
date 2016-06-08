@@ -77,11 +77,12 @@ void intruderAlarm(cv::Mat& bg_frame, cv::Mat& cam_frame)
                 foregroundMask.at<unsigned char>(j,i) =  255;
             }
         }
-	//cv::imshow("Before", foregroundMask);
+	cv::imshow("Before", foregroundMask);
 	//cv::imshow("Picture", bg_frame);
 	//cv::erode(foregroundMask,foregroundMask,cv::Mat());
 	//cv::dilate(foregroundMask,foregroundMask,cv::Mat());
 	//cv::imshow("After dilate", foregroundMask);
+	/*
 	cv::findContours( foregroundMask, // binary input image 
                                contours, // vector of vectors of points
                                CV_RETR_EXTERNAL, // retrieve only external contours
@@ -115,7 +116,7 @@ void intruderAlarm(cv::Mat& bg_frame, cv::Mat& cam_frame)
   for( int i = 0; i< contours.size(); i++ )
   {
     if (  /*center[i].x > boundary_car[0].x && center[i].x < boundary_car[1].x 
-        && center[i].y > boundary_car[0].y && center[i].y < boundary_car[1].y*/1 )
+        && center[i].y > boundary_car[0].y && center[i].y < boundary_car[1].y*//*1 )
     {
       Scalar color_1 = Scalar(0,0,0);
  		  drawContours( foregroundMask, contours_poly, i, color_1, 1, 8, vector<Vec4i>(), 0, Point() );
@@ -137,11 +138,11 @@ void intruderAlarm(cv::Mat& bg_frame, cv::Mat& cam_frame)
 	//cv::line(drawing, cv::Point(0, 870), cv::Point(drawing.size().width, 1025), cv::Scalar(0, 0, 255), 2, 8);
   //cv::rectangle(drawing, cv::Point(0, 370), cv::Point(drawing.size().width, 1025), cv::Scalar(0, 255, 255), 2, 8);
 	//imshow( "Contours", drawing );
-	//imshow( "Final Form", foregroundMask );
+	//imshow( "Final Form", foregroundMask );*/
 }
 int main(int argc, char* argv[])
 {
-		namedWindow("Frame");
+		namedWindow("Video");
     data.clear();
     data.open("data.log",ios::out);
     // Load test images
@@ -182,12 +183,12 @@ int main(int argc, char* argv[])
     // Display result
 	
 	//makeGrid(a);
-	cv::line(a, cv::Point(0, 370), cv::Point(a.size().width, 525), cv::Scalar(0, 0, 255), 2, 8);
-	cv::line(a, cv::Point(0, 870), cv::Point(a.size().width, 1025), cv::Scalar(0, 0, 255), 2, 8);
-	cv::line(a, boundary[0], boundary[3], cv::Scalar(0, 255, 255), 2, 8);
-	cv::line(a, boundary[2], boundary[1], cv::Scalar(0, 255, 255), 2, 8);
-  	cv::imshow("a", a);
-		cv::imshow("Frame", frame);
+	//cv::line(a, cv::Point(0, 370), cv::Point(a.size().width, 525), cv::Scalar(255, 255, 255), 2, 8);
+	//cv::line(a, cv::Point(0, 870), cv::Point(a.size().width, 1025), cv::Scalar(255, 255, 255), 2, 8);
+	//cv::line(a, boundary[0], boundary[3], cv::Scalar(255, 255, 255), 2, 8);
+	//cv::line(a, boundary[2], boundary[1], cv::Scalar(255, 255, 255), 2, 8);
+  	//cv::imshow("a", a);
+		cv::imshow("Video", frame);
 		//cv::imshow("b", b_ROI);
 		//cv::imshow("frame2", b_ROI);
 	//setMouseCallback( "a", onMouse, 0 );	
